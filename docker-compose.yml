@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+    server_a:
+        image: nginx:latest
+        ports:
+            - "8001:80"
+
+    server_b:
+        image: nginx:latest
+        ports:
+            - "8002:80"
+
+    server_c:
+        image: nginx:latest
+        ports:
+            - "8003:80"

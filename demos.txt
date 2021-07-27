@@ -1,0 +1,68 @@
+###   Demo Docker Registry
+
+PUBLIC REGISTRY
+
+docker search --filter=stars=3 --no-trunc busybox
+
+docker search --filter is-official=true --filter stars=3 busybox
+
+docker search --format "table {{.Name}}\t{{.IsAutomated}}\t{{.IsOfficial}}" nginx
+
+
+
+PRIVATE REGISTRY
+
+docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
+docker tag docker101tutorial localhost:5000/docker101tutorial
+
+docker push localhost:5000/docker101tutorial
+
+http://localhost:5000/v2/_catalog
+
+docker pull localhost:5000/docker101tutorial
+
+
+
+
+###   Demo Docker Compose - 1
+
+$ docker-compose up -d
+
+$ docker-compose ps
+
+$ docker-compose logs
+
+$ docker-compose stop
+
+$ docker-compose up –d server_a server_b
+
+$ docker-compose exec server_a /bin/bash
+
+
+
+
+###   Demo Docker Compose - 2
+
+# Openup Debian console and run below commands.
+git clone https://github.com/docker/awesome-compose.git
+cd awesome-compose/aspnet-mssql/
+docker-compose up –d
+
+# Open up a browser and go to below address.
+http://localhost:80
+
+# Change the directory as below and run the commands in order.
+cd ~/sample/awesome-compose/elasticsearch-logstash-kibana
+docker-compose up –d
+
+# Open up a browser and go to below address.
+
+# for Elastic
+http://localhost:9200
+
+# for Kibana
+http://localhost:5601/app/kibana#/home
+
+# for LogStash
+localhost:9600
