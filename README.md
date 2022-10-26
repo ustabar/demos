@@ -1,2 +1,3 @@
-# demos
-Files are used for demo purpose
+# docker-compose command usage
+
+Included files are used for demo purpose(s).
